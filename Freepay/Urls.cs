@@ -56,8 +56,9 @@ namespace Freepay
 
         public static string GetSetEarlistCaptureUrl(int transactionId, string password, DateTime earliestCapture)
         {
+            var earliestCaptureString = earliestCapture.ToString("dd-MM-yyyy HH:mm:ss");
             return
-                   $"/webservices/public/management.asmx/SetEarliestCapture?transactionID={transactionId}&password={password}&earliestCapture={earliestCapture}";
+                   $"/webservices/public/management.asmx/SetEarliestCapture?transactionID={transactionId}&password={password}&earliestCapture={earliestCaptureString}";
 
         }
 
